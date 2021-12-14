@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{bsModalRef?.content?.title}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label class="form-label" for="name">Name:</label>
+            <input type="text" [value]="bsModalRef?.content?.data?.name" disabled class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="email">Email:</label>
+            <input type="email" [value]="bsModalRef?.content?.data?.email" class="form-control" disabled>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="id">Id:</label>
+            <input type="number" [value]="bsModalRef?.content?.data?.id" name="id" class="form-control" disabled>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="postId">PostId:</label>
+            <input type="number" [value]="bsModalRef?.content?.data?.postId" class="form-control" disabled>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="body">Comment:</label>
+            <textarea type="text" [value]="bsModalRef?.content?.data?.body" class="form-control"></textarea>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{bsModalRef?.content?.closeBtnName}}</button>
+</div>

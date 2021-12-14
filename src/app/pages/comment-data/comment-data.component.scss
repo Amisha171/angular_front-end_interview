@@ -1,0 +1,15 @@
+.card-body {
+    .comment-list {
+        .comment-list-item {
+            padding: 16px;
+            background: #dedede;
+            border-radius: 12px;
+            border: none;
+            margin-bottom: 16px;
+            min-height: 130px;
+            &:nth-last-child(1) {
+                margin: 0;
+            }
+        }
+    }
+}

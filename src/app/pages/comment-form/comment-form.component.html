@@ -1,0 +1,53 @@
+<div class="container comment-form-container mb-5 mt-5">
+    <div class="header">
+        <h1>Form</h1>
+    </div>
+    <form (ngSubmit)="submit()" class="row g-3 needs-validation" #commentForm="ngForm" novalidate>
+        <div class="row d-flex col-12 mb-16">
+            <div class="from-group col-6">
+                <label class="form-label" for="name">Name:</label>
+                <input type="text" [ngClass]="{'is-invalid':name.invalid && name.dirty}" #name="ngModel" name="name"  required class="form-control"[(ngModel)]="formData.name" required>
+                <div *ngIf="name.invalid && name.dirty" style="color: 'red'">
+                    Name is required
+                </div>
+            </div>
+            <div class="from-group col-6">
+                <label class="form-label" for="email">Email:</label>
+                <input type="email" #email="ngModel" [ngClass]="{'is-invalid':email.invalid && email.dirty}" class="form-control" name="email" [(ngModel)]="formData.email" required>
+                <div *ngIf="email.invalid && email.dirty" style="color: 'red'">
+                    Email is required
+                </div>
+            </div>  
+        </div>
+        <div class="row d-flex col-12 mb-16">
+            <div class="from-group col-6">
+                <label class="form-label" for="name">Phone:</label>
+                <input type="text" #phone="ngModel" appPhoneMask [ngClass]="{'is-invalid':phone.invalid && phone.dirty || phone.dirty && phone?.value?.length < 16}" required class="form-control" placeholder="(555) 555-5555"
+                    name="phone" [(ngModel)]="formData.phone" required>
+                    <div *ngIf="phone.invalid && phone.dirty" style="color: 'red'">
+                        Phone is required
+                    </div>
+                    <div *ngIf="phone?.value?.length < 16 && phone.dirty" style="color: 'red'">
+                        Phone is required
+                    </div>
+            </div>
+            <div class="from-group col-6">
+                <label class="form-label" for="postId">Zip Code:</label>
+                <input type="text" #zipcode="ngModel" [ngClass]="{'is-invalid':zipcode.invalid && zipcode.dirty}" appOnlyNumbers class="form-control" name="zipcode" [(ngModel)]="formData.postId" required>
+                <div *ngIf="zipcode.invalid && zipcode.dirty" style="color: 'red'">
+                    Zipcode is required
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex from-group col-12 px-24">
+            <label class="form-label" for="body">Comment:</label>
+            <textarea type="text" #comment="ngModel" [ngClass]="{'is-invalid':comment.invalid && comment.dirty}" class="form-control" name="comment" [(ngModel)]="formData.body" required></textarea>
+            <div *ngIf="comment.invalid && comment.dirty" style="color: 'red'">
+                Comment is required
+            </div>
+        </div>
+        <div class="submit-button">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
