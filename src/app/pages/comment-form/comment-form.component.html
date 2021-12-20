@@ -13,7 +13,7 @@
             </div>
             <div class="from-group col-6">
                 <label class="form-label" for="email">Email:</label>
-                <input type="email" #email="ngModel" [ngClass]="{'is-invalid':email.invalid && email.dirty}" class="form-control" name="email" [(ngModel)]="formData.email" required>
+                <input type="email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [ngClass]="{'is-invalid':email.invalid && email.dirty}" class="form-control" name="email" [(ngModel)]="formData.email" required>
                 <div *ngIf="email.invalid && email.dirty" style="color: 'red'">
                     Email is required
                 </div>

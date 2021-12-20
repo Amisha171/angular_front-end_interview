@@ -1,6 +1,11 @@
 <div class="container mt-5">
-    <div class="d-flex flex-column">
-        <app-comment-data></app-comment-data>
-        <app-comment-form></app-comment-form>
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <app-comment-data [commentsResponse] ='commentsResponse'></app-comment-data>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <app-comment-form></app-comment-form> 
+        </div>
     </div>
 </div>

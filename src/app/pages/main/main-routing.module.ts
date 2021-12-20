@@ -4,7 +4,7 @@ import { MainComponent } from '..';
 
 const routes: Routes = [
   {
-    path: '', component: MainComponent, pathMatch: 'full'
+    path: '', component: MainComponent
   },
 ];
 
